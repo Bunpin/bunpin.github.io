@@ -159,7 +159,7 @@
         <div class="item-block">
           <div class="item-name">basreng pedas</div>
           <div class="item-price">Rp 6.000</div>
-          <img src="basogorengpedas.jpg" alt="basreng pedas">
+          <img src="Basreng.jpg" alt="basreng pedas">
         </div>
         <div class="item-info">
           <div class="item-controls">
@@ -170,41 +170,41 @@
         </div>
       </div><div class="item">
         <div class="item-block">
-          <div class="item-name">Sosis Solo</div>
+          <div class="item-name">Basreng Ori</div>
           <div class="item-price">Rp 6.000</div>
-          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Sosis%20Solo.jpg" alt="Sosis Solo">
+          <img src="Basreng.jpg.jpg" alt="basreng ori">
         </div>
         <div class="item-info">
           <div class="item-controls">
-            <button onclick="updateQty('Sosis Solo', -1)">-</button>
-            <input type="number" id="qty-Sosis Solo" value="0" min="0">
-            <button onclick="updateQty('Sosis Solo', 1)">+</button>
+            <button onclick="updateQty('Basreng Ori', -1)">-</button>
+            <input type="number" id="qty-Basreng Ori" value="0" min="0">
+            <button onclick="updateQty('Basreng Ori', 1)">+</button>
           </div>
         </div>
       </div><div class="item">
         <div class="item-block">
-          <div class="item-name">Risol Sayur</div>
-          <div class="item-price">Rp 3.000</div>
-          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Sayur.jpg" alt="Risol Sayur">
+          <div class="item-name">Makaroni Ori</div>
+          <div class="item-price">Rp 8.000</div>
+          <img src="Basreng.jpg" alt="Makaroni Ori">
         </div>
         <div class="item-info">
           <div class="item-controls">
-            <button onclick="updateQty('Risol Sayur', -1)">-</button>
-            <input type="number" id="qty-Risol Sayur" value="0" min="0">
-            <button onclick="updateQty('Risol Sayur', 1)">+</button>
+            <button onclick="updateQty('Makaroni Ori', -1)">-</button>
+            <input type="number" id="qty-Makaroni Ori" value="0" min="0">
+            <button onclick="updateQty('Makaroni Ori', 1)">+</button>
           </div>
         </div>
       </div><div class="item">
         <div class="item-block">
-          <div class="item-name">Roti Goreng Sayur</div>
-          <div class="item-price">Rp 3.000</div>
-          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Sayur.jpg" alt="Roti Goreng Sayur">
+          <div class="item-name">Makaroni Pedas</div>
+          <div class="item-price">Rp 8.000</div>
+          <img src="basreng.jpg" alt="Makaroni Pedas">
         </div>
         <div class="item-info">
           <div class="item-controls">
-            <button onclick="updateQty('Roti Goreng Sayur', -1)">-</button>
-            <input type="number" id="qty-Roti Goreng Sayur" value="0" min="0">
-            <button onclick="updateQty('Roti Goreng Sayur', 1)">+</button>
+            <button onclick="updateQty('Makaroni Pedas', -1)">-</button>
+            <input type="number" id="qty-Makaroni Pedas" value="0" min="0">
+            <button onclick="updateQty('Makaroni Pedas', 1)">+</button>
           </div>
         </div>
       </div><div class="item">
@@ -298,9 +298,9 @@
     const SHEETDB_API_URL = "https://sheetdb.io/api/v1/0c2tern02qzvl";
     const dataGorengan = [
       { nama: "basreng pedas", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Mayo.jpg" },
-      { nama: "Sosis Solo", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Sosis%20Solo.jpg" },
-      { nama: "Risol Sayur", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Sayur.jpg" },
-      { nama: "Roti Goreng Sayur", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Sayur.jpg" },
+      { nama: "Basreng Ori", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Sosis%20Solo.jpg" },
+      { nama: "Makaroni Ori", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Sayur.jpg" },
+      { nama: "Makaroni Pedas", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Sayur.jpg" },
       { nama: "Martabak", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Martabak.jpg" },
       { nama: "Pastel", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Pastel.jpg" },
       { nama: "Roti Goreng Coklat", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Coklat.jpg" },
@@ -308,7 +308,7 @@
       { nama: "Dadar Gulung", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Dadar%20Gulung.jpg" }
     ];
     const hargaGorengan = {
-      "basreng pedas": 4000, "Sosis Solo": 4000, "Risol Sayur": 3000, "Roti Goreng Sayur": 3000,
+      "basreng pedas": 4000, "Basreng Ori": 4000, "Makaroni Ori": 3000, "Makaroni Pedas": 3000,
       "Martabak": 3000, "Pastel": 3000, "Roti Goreng Coklat": 3000, "Pisang Molen": 3000, "Dadar Gulung": 3000
     };
     const listContainer = document.getElementById("gorengan-list");
