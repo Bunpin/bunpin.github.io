@@ -1,5 +1,4 @@
-<html lang="id">
-<head>
+<html lang="id"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jajanan Bunpin</title>
@@ -155,10 +154,73 @@
 </head>
 <body>
   <h1>Jajanan Bunpin</h1>
-  <input type="text" id="nama" placeholder="Masukkan nama kamu" pattern="[A-Za-z\s]+" title="Hanya huruf dan spasi saja" required>
-
-  <div id="Jajanan-list"></div>
-
+  <input type="text" id="nama" placeholder="Masukkan nama kamu" pattern="[A-Za-z\s]+" title="Hanya huruf dan spasi saja" required="">
+  <div id="Jajanan-list"><div class="item">
+        <div class="item-block">
+          <div class="item-name">Basreng Pedas</div>
+          <div class="item-price">Rp 6.000</div>
+          <img src="https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" alt="Basreng Pedas">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Basreng Pedas', -1)">-</button>
+            <input type="number" id="qty-Basreng Pedas" value="0" min="0">
+            <button onclick="updateQty('Basreng Pedas', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Basreng Ori</div>
+          <div class="item-price">Rp 6.000</div>
+          <img src="https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" alt="basreng ori">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Basreng Ori', -1)">-</button>
+            <input type="number" id="qty-Basreng Ori" value="0" min="0">
+            <button onclick="updateQty('Basreng Ori', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Makaroni Ori</div>
+          <div class="item-price">Rp 8.000</div>
+          <img src="https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" alt="Makaroni Ori">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Makaroni Ori', -1)">-</button>
+            <input type="number" id="qty-Makaroni Ori" value="0" min="0">
+            <button onclick="updateQty('Makaroni Ori', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Makaroni Pedas</div>
+          <div class="item-price">Rp 8.000</div>
+          <img src="https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" alt="Makaroni Pedas">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Makaroni Pedas', -1)">-</button>
+            <input type="number" id="qty-Makaroni Pedas" value="0" min="0">
+            <button onclick="updateQty('Makaroni Pedas', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Kulit</div>
+          <div class="item-price">Rp 15.000</div>
+          <img src="https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" alt="Kulit">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Kulit', -1)">-</button>
+            <input type="number" id="qty-Kulit" value="0" min="0">
+            <button onclick="updateQty('Kulit', 1)">+</button>
+          </div>
+        </div>
+      </div></div>
   <button id="submit">Submit Pesanan</button>
   <button id="bayar">Bayar Disini</button>
 
