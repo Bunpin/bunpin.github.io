@@ -1,0 +1,416 @@
+<html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jajanan Bunpin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fffaf0;
+      color: #333;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .item img:hover {
+      transform: scale(1.05);
+    }
+    .item-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+    .item-name {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .item-price {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+    .item-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .item-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .item-controls button,
+    .item-controls input {
+      height: 40px;
+      font-size: 16px;
+    }
+    .item-controls input {
+      width: 60px;
+      text-align: center;
+    }
+    #submit, #bayar {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #submit {
+      background-color: #f57c00;
+      color: white;
+      margin-top: 30px;
+    }
+    #submit:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    #bayar {
+      margin-top: 20px;
+      background-color: #4caf50;
+      color: white;
+    }
+    #bayar:hover {
+      background-color: #45a049;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.75);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+    .modal-close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #fff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 22px;
+      color: #333;
+      font-weight: bold;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+    @media (max-width: 600px) {
+      .item {
+        flex-direction: column;
+        align-items: center;
+      }
+      .item-controls {
+        width: 100%;
+        justify-content: space-evenly;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>jajanan bunpin</h1>
+  <input type="text" id="nama" placeholder="Masukkan nama kamu" pattern="[A-Za-z\s]+" title="Hanya huruf dan spasi saja" required="">
+  <div id="gorengan-list"><div class="item">
+        <div class="item-block">
+          <div class="item-name">basreng pedas</div>
+          <div class="item-price">Rp 6.000</div>
+          <img src="basogorengpedas.jpg" alt="basreng pedas">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('basreng pedas', -1)">-</button>
+            <input type="number" id="qty-basreng pedas" value="0" min="0">
+            <button onclick="updateQty('basreng pedas', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Sosis Solo</div>
+          <div class="item-price">Rp 6.000</div>
+          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Sosis%20Solo.jpg" alt="Sosis Solo">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Sosis Solo', -1)">-</button>
+            <input type="number" id="qty-Sosis Solo" value="0" min="0">
+            <button onclick="updateQty('Sosis Solo', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Risol Sayur</div>
+          <div class="item-price">Rp 3.000</div>
+          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Sayur.jpg" alt="Risol Sayur">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Risol Sayur', -1)">-</button>
+            <input type="number" id="qty-Risol Sayur" value="0" min="0">
+            <button onclick="updateQty('Risol Sayur', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Roti Goreng Sayur</div>
+          <div class="item-price">Rp 3.000</div>
+          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Sayur.jpg" alt="Roti Goreng Sayur">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Roti Goreng Sayur', -1)">-</button>
+            <input type="number" id="qty-Roti Goreng Sayur" value="0" min="0">
+            <button onclick="updateQty('Roti Goreng Sayur', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Martabak</div>
+          <div class="item-price">Rp 3.000</div>
+          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Martabak.jpg" alt="Martabak">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Martabak', -1)">-</button>
+            <input type="number" id="qty-Martabak" value="0" min="0">
+            <button onclick="updateQty('Martabak', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Pastel</div>
+          <div class="item-price">Rp 3.000</div>
+          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Pastel.jpg" alt="Pastel">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Pastel', -1)">-</button>
+            <input type="number" id="qty-Pastel" value="0" min="0">
+            <button onclick="updateQty('Pastel', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Roti Goreng Coklat</div>
+          <div class="item-price">Rp 3.000</div>
+          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Coklat.jpg" alt="Roti Goreng Coklat">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Roti Goreng Coklat', -1)">-</button>
+            <input type="number" id="qty-Roti Goreng Coklat" value="0" min="0">
+            <button onclick="updateQty('Roti Goreng Coklat', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Pisang Molen</div>
+          <div class="item-price">Rp 3.000</div>
+          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Pisang%20molen.jpg" alt="Pisang Molen">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Pisang Molen', -1)">-</button>
+            <input type="number" id="qty-Pisang Molen" value="0" min="0">
+            <button onclick="updateQty('Pisang Molen', 1)">+</button>
+          </div>
+        </div>
+      </div><div class="item">
+        <div class="item-block">
+          <div class="item-name">Dadar Gulung</div>
+          <div class="item-price">Rp 3.000</div>
+          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Dadar%20Gulung.jpg" alt="Dadar Gulung">
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('Dadar Gulung', -1)">-</button>
+            <input type="number" id="qty-Dadar Gulung" value="0" min="0">
+            <button onclick="updateQty('Dadar Gulung', 1)">+</button>
+          </div>
+        </div>
+      </div></div>
+  <button id="submit">Submit Pesanan</button>
+  <button id="bayar">Bayar Disini</button>
+
+  <!-- Modal Pembayaran -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modal-close">×</span>
+      <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/WhatsApp%20Image%202025-07-24%20at%2013.44.50.jpeg" alt="Bayar Disini">
+    </div>
+  </div>
+
+  <!-- Modal Konfirmasi -->
+  <div class="modal" id="modal-konfirmasi">
+    <div class="modal-content" style="background: white; padding: 20px; border-radius: 10px; max-width: 400px; width: 90%; text-align: center; position: relative;">
+      <span class="modal-close" id="konfirmasi-close">×</span>
+      <h3>Konfirmasi Pesanan</h3>
+      <div id="konfirmasi-detail" style="text-align: left; margin-top: 15px; max-height: 300px; overflow-y: auto; white-space: pre-wrap;"></div>
+      <button id="konfirmasi-pesan" style="margin-top: 20px; padding: 10px 20px; background: #f57c00; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Konfirmasi Pesanan</button>
+    </div>
+  </div>
+
+  <script>
+    const SHEETDB_API_URL = "https://sheetdb.io/api/v1/0c2tern02qzvl";
+    const dataGorengan = [
+      { nama: "basreng pedas", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Mayo.jpg" },
+      { nama: "Sosis Solo", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Sosis%20Solo.jpg" },
+      { nama: "Risol Sayur", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Sayur.jpg" },
+      { nama: "Roti Goreng Sayur", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Sayur.jpg" },
+      { nama: "Martabak", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Martabak.jpg" },
+      { nama: "Pastel", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Pastel.jpg" },
+      { nama: "Roti Goreng Coklat", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Coklat.jpg" },
+      { nama: "Pisang Molen", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Pisang%20molen.jpg" },
+      { nama: "Dadar Gulung", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Dadar%20Gulung.jpg" }
+    ];
+    const hargaGorengan = {
+      "basreng pedas": 4000, "Sosis Solo": 4000, "Risol Sayur": 3000, "Roti Goreng Sayur": 3000,
+      "Martabak": 3000, "Pastel": 3000, "Roti Goreng Coklat": 3000, "Pisang Molen": 3000, "Dadar Gulung": 3000
+    };
+    const listContainer = document.getElementById("gorengan-list");
+    dataGorengan.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = 
+        <div class="item-block">
+          <div class="item-name">${item.nama}</div>
+          <div class="item-price">Rp ${hargaGorengan[item.nama].toLocaleString()}</div>
+          <img src="${item.img}" alt="${item.nama}" />
+        </div>
+        <div class="item-info">
+          <div class="item-controls">
+            <button onclick="updateQty('${item.nama}', -1)">-</button>
+            <input type="number" id="qty-${item.nama}" value="0" min="0" />
+            <button onclick="updateQty('${item.nama}', 1)">+</button>
+          </div>
+        </div>
+      ;
+      listContainer.appendChild(div);
+    });
+
+    function updateQty(nama, delta) {
+      const input = document.getElementById(qty-${nama});
+      let value = parseInt(input.value) || 0;
+      value += delta;
+      if (value < 0) value = 0;
+      input.value = value;
+    }
+
+    // Membesarkan gambar saat diklik
+    document.querySelectorAll("#gorengan-list img").forEach(img => {
+      img.addEventListener("click", () => {
+        const modal = document.createElement("div");
+        modal.className = "modal";
+        modal.style.display = "flex";
+        modal.innerHTML = 
+          <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img src="${img.src}" alt="${img.alt}" style="max-width: 90vw; max-height: 90vh; border-radius: 10px; display: block;" />
+          </div>
+        ;
+        document.body.appendChild(modal);
+        modal.querySelector(".modal-close").onclick = () => modal.remove();
+        modal.addEventListener("click", (e) => { if (e.target === modal) modal.remove(); });
+      });
+    });
+
+    let isSubmitting = false;
+    document.getElementById("submit").addEventListener("click", () => {
+      if (isSubmitting) return;
+      const nama = document.getElementById("nama").value.trim();
+      if (!nama) { alert("Nama wajib diisi"); return; }
+      let totalBelanja = 0, pesanan = {}, detailPesanan = "";
+      dataGorengan.forEach(item => {
+        const qty = parseInt(document.getElementById(qty-${item.nama}).value) || 0;
+        if (qty > 0) {
+          pesanan[item.nama] = qty;
+          totalBelanja += qty * hargaGorengan[item.nama];
+          detailPesanan += ${item.nama}: ${qty} x Rp ${hargaGorengan[item.nama].toLocaleString()} = Rp ${(qty * hargaGorengan[item.nama]).toLocaleString()}\n;
+        }
+      });
+      if (totalBelanja === 0) { alert("Belum ada pesanan yang dipilih."); return; }
+      document.getElementById("konfirmasi-detail").innerText = Nama: ${nama}\n\n${detailPesanan}\nTotal: Rp ${totalBelanja.toLocaleString()};
+      document.getElementById("modal-konfirmasi").style.display = "flex";
+      document.getElementById("konfirmasi-pesan").onclick = function() {
+        if (isSubmitting) return;
+        isSubmitting = true;
+        this.disabled = true;
+        this.innerText = "Mengirim...";
+        const dataToSend = { data: [ Object.assign({ Timestamp: new Date().toLocaleString(), Nama: nama, total_belanja: totalBelanja }, pesanan) ] };
+        fetch(SHEETDB_API_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(dataToSend) })
+        .then(res => res.json())
+        .then(response => { alert(Pesanan berhasil dikirim! Total belanja: Rp ${totalBelanja.toLocaleString()}); location.reload(); })
+        .catch(err => {
+          alert("Gagal mengirim pesanan. Coba ulangi.");
+          console.error(err);
+          isSubmitting = false;
+          document.getElementById("konfirmasi-pesan").disabled = false;
+          document.getElementById("konfirmasi-pesan").innerText = "Konfirmasi Pesanan";
+        });
+      }
+    });
+
+    document.getElementById("konfirmasi-close").onclick = () => document.getElementById("modal-konfirmasi").style.display = "none";
+    window.addEventListener("click", (e) => { if (e.target === document.getElementById("modal-konfirmasi")) document.getElementById("modal-konfirmasi").style.display = "none"; });
+    document.getElementById("bayar").addEventListener('click', () => document.getElementById('modal').style.display = 'flex');
+    document.getElementById('modal-close').addEventListener('click', () => document.getElementById('modal').style.display = 'none');
+    window.addEventListener('click', (e) => { if (e.target === document.getElementById('modal')) document.getElementById('modal').style.display = 'none'; });
+    function cekJamOperasional() {
+      const jam = new Date().getHours();
+      if (jam >= 22 || jam < 6) {
+        document.getElementById('nama').disabled = true;
+        document.getElementById('submit').disabled = true;
+        document.getElementById('submit').innerText = 'Tutup, buka jam 06:00 pagi';
+        document.querySelectorAll('input[type=number]').forEach(input => input.disabled = true);
+        document.querySelectorAll('.item-controls button').forEach(btn => btn.disabled = true);
+      }
+    }
+    cekJamOperasional();
+  </script>
+
+
+</body></html>
