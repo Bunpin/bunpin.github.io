@@ -259,7 +259,7 @@
     dataJajanan.forEach(item => {
       const div = document.createElement("div");
       div.className = "item";
-      div.innerHTML = 
+      div.innerHTML = '
         <div class="item-block">
           <div class="item-name">${item.nama}</div>
           <div class="item-price">Rp ${hargaJajanan[item.nama].toLocaleString()}</div>
@@ -272,12 +272,12 @@
             <button onclick="updateQty('${item.nama}', 1)">+</button>
           </div>
         </div>
-      ;
+      ';
       listContainer.appendChild(div);
     });
 
     function updateQty(nama, delta) {
-      const input = document.getElementById(qty-${nama});
+      const input = document.getElementById('qty-${nama}');
       let value = parseInt(input.value) || 0;
       value += delta;
       if (value < 0) value = 0;
@@ -297,7 +297,7 @@
           </div>
         ;
         document.body.appendChild(modal);
-        modal.querySelector(".modal-close").onclick = () => modal.remove();
+        modal.querySelector(".modal-close").onclick = () => modal.style.display = 'none';
         modal.addEventListener("click", (e) => { if (e.target === modal) modal.remove(); });
       });
     });
@@ -313,7 +313,7 @@
         if (qty > 0) {
           pesanan[item.nama] = qty;
           totalBelanja += qty * hargaJajanan[item.nama];
-          detailPesanan += ${item.nama}: ${qty} x Rp ${hargaJajanan[item.nama].toLocaleString()} = Rp ${(qty * hargaJajanan[item.nama]).toLocaleString()}\n;
+          detailPesanan += `${item.nama}: ${qty} x Rp ${hargaJajanan[item.nama].toLocaleString()} = Rp ${(qty * hargaJajanan[item.nama]).toLocaleString()}\n`;
         }
       });
       if (totalBelanja === 0) { alert("Belum ada pesanan yang dipilih."); return; }
