@@ -157,15 +157,15 @@
   <input type="text" id="nama" placeholder="Masukkan nama kamu" pattern="[A-Za-z\s]+" title="Hanya huruf dan spasi saja" required="">
   <div id="gorengan-list"><div class="item">
         <div class="item-block">
-          <div class="item-name">basreng pedas</div>
+          <div class="item-name">Basreng Pedas</div>
           <div class="item-price">Rp 6.000</div>
-          <img src="Basreng.jpg" alt="basreng pedas">
+          <img src="https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" alt="Basreng Pedas">
         </div>
         <div class="item-info">
           <div class="item-controls">
-            <button onclick="updateQty('basreng pedas', -1)">-</button>
-            <input type="number" id="qty-basreng pedas" value="0" min="0">
-            <button onclick="updateQty('basreng pedas', 1)">+</button>
+            <button onclick="updateQty('Basreng Pedas', -1)">-</button>
+            <input type="number" id="qty-Basreng Pedas" value="0" min="0">
+            <button onclick="updateQty('Basreng Pedas', 1)">+</button>
           </div>
         </div>
       </div><div class="item">
@@ -185,7 +185,7 @@
         <div class="item-block">
           <div class="item-name">Makaroni Ori</div>
           <div class="item-price">Rp 8.000</div>
-          <img src="Basreng.jpg" alt="Makaroni Ori">
+          <img src="https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" alt="Makaroni Ori">
         </div>
         <div class="item-info">
           <div class="item-controls">
@@ -198,7 +198,7 @@
         <div class="item-block">
           <div class="item-name">Makaroni Pedas</div>
           <div class="item-price">Rp 8.000</div>
-          <img src="basreng.jpg" alt="Makaroni Pedas">
+          <img src="https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" alt="Makaroni Pedas">
         </div>
         <div class="item-info">
           <div class="item-controls">
@@ -209,21 +209,21 @@
         </div>
       </div><div class="item">
         <div class="item-block">
-          <div class="item-name">Martabak</div>
-          <div class="item-price">Rp 3.000</div>
-          <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Martabak.jpg" alt="Martabak">
+          <div class="item-name">Kulit</div>
+          <div class="item-price">Rp 15.000</div>
+          <img src="https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" alt="Kulit">
         </div>
         <div class="item-info">
           <div class="item-controls">
-            <button onclick="updateQty('Martabak', -1)">-</button>
-            <input type="number" id="qty-Martabak" value="0" min="0">
-            <button onclick="updateQty('Martabak', 1)">+</button>
+            <button onclick="updateQty('Kulit', -1)">-</button>
+            <input type="number" id="qty-Kulit" value="0" min="0">
+            <button onclick="updateQty('Kulit', 1)">+</button>
           </div>
         </div>
       </div><div class="item">
         <div class="item-block">
           <div class="item-name">Pastel</div>
-          <div class="item-price">Rp 3.000</div>
+          <div class="item-price">Rp 15.000</div>
           <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Pastel.jpg" alt="Pastel">
         </div>
         <div class="item-info">
@@ -236,7 +236,7 @@
       </div><div class="item">
         <div class="item-block">
           <div class="item-name">Roti Goreng Coklat</div>
-          <div class="item-price">Rp 3.000</div>
+          <div class="item-price">Rp 15.000</div>
           <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Coklat.jpg" alt="Roti Goreng Coklat">
         </div>
         <div class="item-info">
@@ -249,7 +249,7 @@
       </div><div class="item">
         <div class="item-block">
           <div class="item-name">Pisang Molen</div>
-          <div class="item-price">Rp 3.000</div>
+          <div class="item-price">Rp 15.000</div>
           <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Pisang%20molen.jpg" alt="Pisang Molen">
         </div>
         <div class="item-info">
@@ -262,7 +262,7 @@
       </div><div class="item">
         <div class="item-block">
           <div class="item-name">Dadar Gulung</div>
-          <div class="item-price">Rp 3.000</div>
+          <div class="item-price">Rp 15.000</div>
           <img src="https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Dadar%20Gulung.jpg" alt="Dadar Gulung">
         </div>
         <div class="item-info">
@@ -297,19 +297,19 @@
   <script>
     const SHEETDB_API_URL = "https://sheetdb.io/api/v1/0c2tern02qzvl";
     const dataGorengan = [
-      { nama: "basreng pedas", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Mayo.jpg" },
+      { nama: "Basreng Pedas", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Mayo.jpg" },
       { nama: "Basreng Ori", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Sosis%20Solo.jpg" },
       { nama: "Makaroni Ori", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Risol%20Sayur.jpg" },
       { nama: "Makaroni Pedas", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Sayur.jpg" },
-      { nama: "Martabak", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Martabak.jpg" },
+      { nama: "Kulit", img: "https://github.com/Bunpin/bunpin.github.io/blob/main/Basreng.JPG?raw=true.jpg" },
       { nama: "Pastel", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Pastel.jpg" },
       { nama: "Roti Goreng Coklat", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Roti%20Goreng%20Coklat.jpg" },
       { nama: "Pisang Molen", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Pisang%20molen.jpg" },
       { nama: "Dadar Gulung", img: "https://raw.githubusercontent.com/RisyadTama/pesenan-gorengan/main/Dadar%20Gulung.jpg" }
     ];
     const hargaGorengan = {
-      "basreng pedas": 4000, "Basreng Ori": 4000, "Makaroni Ori": 3000, "Makaroni Pedas": 3000,
-      "Martabak": 3000, "Pastel": 3000, "Roti Goreng Coklat": 3000, "Pisang Molen": 3000, "Dadar Gulung": 3000
+      "Basreng Pedas": 4000, "Basreng Ori": 4000, "Makaroni Ori": 3000, "Makaroni Pedas": 3000,
+      "Kulit": 3000, "Pastel": 3000, "Roti Goreng Coklat": 3000, "Pisang Molen": 3000, "Dadar Gulung": 3000
     };
     const listContainer = document.getElementById("gorengan-list");
     dataGorengan.forEach(item => {
